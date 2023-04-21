@@ -1,0 +1,286 @@
+:root{
+    --veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+    --softRed: hsl(14, 88%, 65%);
+
+    /*Background Gradient*/
+    --softViolet: hsl(273, 75%, 66%);
+    --softBlue: hsl(240, 73%, 65%);
+
+    /*Text*/
+    --veryDarkGrayishBlue: hsl(237, 12%, 33%);
+    --darkGrayishBlue: hsl(240, 6%, 50%);
+
+    /*Divider*/
+    --lightGrayishBlue: hsl(240, 5%, 91%);
+}
+
+/*Global Style*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+html{
+    font-size: 12px;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, var(--softViolet), var(--softBlue));
+}
+
+main{
+    width: 60%;
+    height: 40%;
+    background-color: #fff;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+h1,h3{
+    color: var(--veryDarkGrayishBlue);
+}
+
+h1{
+    font-size: 2rem;
+    color: #000;
+}
+
+h3{
+    font-weight: 400;
+    display: inline-block;
+    width: 90%;
+}
+
+p{
+    color: var(--darkGrayishBlue);
+}
+
+#faq, #illustration{
+    padding:6rem 5rem;
+}
+
+/* FAQ Section */
+
+#faq{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.question-container{
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--lightGrayishBlue);
+}
+
+.question-container:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.question-container:hover h3{
+    color: var(--softRed);
+}
+
+.answer{
+    display: none;
+}
+
+.question-container.active h3{
+    font-weight: 700;
+    color: var(--veryDarkDesaturatedBlue);
+}
+
+.question-container.active .question{
+    margin-bottom: 1.2rem;
+}
+
+.question-container.active .answer{
+    display: block;
+}
+
+.question-container.active .question svg{
+    transform: rotate(180deg);
+}
+
+/* Illustration Section */
+#illustration{
+    background-image: url("https://julie-gz.github.io/hosted-images/bg-pattern-desktop.svg"), url("https://julie-gz.github.io/hosted-images/illustration-woman-online-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 160% auto, 100% auto;
+    background-position: center left -21vw, center left -4vw;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#illustration #box{
+    width: 20%;
+    height: auto;
+    position: absolute;
+    transform: translate(-90%, 27%);
+}
+
+
+#illustration #woman-mobile{
+    display:none;
+}
+
+/* Attribution */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Media Query */
+
+/* Desktops and large screens */
+@media screen and (min-width:1025px) and (max-width: 1200px) {
+    /* General style */
+    main{
+        width: 80%;
+        height: 60%;
+    }
+
+    #faq, #illustration{
+        padding: 4rem 3rem;
+    } 
+    
+    /* Illustration and background */
+    #illustration{
+        background-position: center left -30vw, center left -7vw;
+    }
+
+}
+
+/* Small screens and laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    /* General style */
+    main{
+        width: 80%;
+        height: 60%;
+    }
+
+    #faq, #illustration{
+        padding: 3rem 2rem;
+    } 
+    
+    /* Illustration and background */
+    #illustration{
+        background-position: center left -33vw, center left -7vw;
+    }
+
+    #illustration #box{
+        transform: translate(-80%, 29%);
+    }
+}
+
+/* Ipads and tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* General style */
+    main{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 40%;
+        padding: 0px 3rem 3rem;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    /* faq section */
+    #faq{
+        padding: 1.5rem;
+        flex-grow: 2;
+    }
+
+    /* Illustration section */
+    #illustration{
+        background-image: url("https://julie-gz.github.io/hosted-images/bg-pattern-mobile.svg");
+        background-size: 80% auto;
+        background-position: top  center;
+        flex-basis: 200px;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    #box{
+        display: none;
+    }  
+
+    #illustration #woman-mobile{
+        display: block;
+        position: absolute;
+        top: -55%;
+        width: 70%;
+    }
+
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 480px){
+    main{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30%;
+        padding: 0px 1.5rem 1.5rem;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    /* faq section */
+    #faq{
+        padding: 1.5rem;
+        flex-grow: 2;
+    }
+
+    /* Illustration section */
+    #illustration{
+        background-image: url("https://julie-gz.github.io/hosted-images/bg-pattern-mobile.svg");
+        background-size: 80% auto;
+        background-position: top  center;
+        flex-basis: 50px;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    #box{
+        display: none;
+    }  
+
+    #illustration #woman-mobile{
+        display: block;
+        position: absolute;
+        top: -54%;
+        width: 70%;
+    }
+
+}
