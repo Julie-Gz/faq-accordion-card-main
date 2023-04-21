@@ -16,3 +16,18 @@ Users should be able to:
 
 - Mobile Screenshot: https://julie-gz.github.io/faq-accordion-card-main/screenshots/Frontend Mentor FAQ Accordion Card - Desktop.png
 
+## My process
+
+### Built with
+
+- HTML5
+- CSS
+- Vanilla JavaScript
+
+### What I learned
+
+One of the things I struggled with was allocating images to certain positions on the page and having them keep their proportions throughout different screen sizes. I used to stick to using the position property,  but I found that combining Flexbox with the position property produce better results. 
+
+## Author
+
+- Frontend Mentor - [@Julie-Gz](https://www.frontendmentor.io/profile/Julie-Gz)
